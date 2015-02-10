@@ -1,0 +1,1 @@
+/* Compatible Couples JavaScript */

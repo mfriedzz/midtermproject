@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Purple People</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Limelight|Lobster+Two&effect=fire-animation|emboss' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style2b.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  </head>
+  <body>
+    
+  
+<!-- <html> -->
+  
+<div class ="container-fluid">
+        
+
+        <!-- <nav class="navbar navbar-inverse" role="navigation"> -->
+        <nav class="navbar navbar-inverse  navbar-fixed-top navbar-header" role="navigation">
+          <div class="container-fluid">
+          <!-- <label id=projectname>Project Name</label> -->
+          <form class="navbar-form navbar-right" role="Email">
+              <div class="form-group">
+              <a class="navbar-brand" href="#">
+              <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo">
+              <a class="form-control"  href="login2.html">Login</a></li>
+              <a class="form-control"  href="about.html">About</a></li>
+              <a class="form-control"  href="compatiblecouples.html">Compatible Couples</a></li>
+                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" placeholder="Passsword">
+                <button type="submit" class="btn btn-success">Sign In</button>
+                </nav>
+              </div>
+              </div>
+              
+        </form>
+        </nav>
+  
+  <!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="logo/purplepeople2.gif">
+     <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo">
+
+      </a>
+    </div>
+  </div>
+</nav> -->
+    <!-- <nav class="clearfix">
+    
+      <header>
+    
+        <img src="logo/purplepeople2.gif" alt="logo" class="align-left custom" id="Logo">
+
+    
+        <!-- </header> -->
+
+    <!-- <div class="nav_lg">
+    <ul> 
+      <li><a href="index.html">Home</a></li>
+      <li><a href="couples.html">Couples</a>
+          <ul>
+            <li><a href="greatestgeneration.html">Greatest Generation(1920-1940)</a></li>
+            <li><a href="boomers.html">Boomers(1940-1960)</a></li>
+            <li><a href="generationx.html">Generation X(1960-1980)</a></li>
+            <li><a href="generationy.html">Generation Y(1980-1990)</a></li>
+            <li><a href="millenials.html">Millienials(1990-2010)</a></li>
+          </ul>
+        </li>
+      <li><a href="login2.html">Login</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>   -->
+
+  <!-- <div class="nav_sm">
+    <label for="menu-toggle"><img src="logo/people.png"></label>
+  <input type="checkbox" id="menu-toggle"/>
+    <ul id="menu">
+      <li><a href="#">First link</a></li>
+      <li><a href="#">Second link</a></li>
+      <li><a href="#">Third link</a></li>
+          <li><a href="index.html">HOME</a></li>
+            <li><a href="couples.html">Couples</a></li>
+              --> <!-- <ul>
+              <li><a href="greatestgeneration.html">Greatest Generation(1920-1940)</a></li>
+              <li><a href="boomers.html">Boomers(1940-1960)</a></li>
+              <li><a href="generationx.html">Generation X(1960-1980)</a></li>
+              <li><a href="generationy.html">Generation Y(1980-1990)</a></li>
+              <li><a href="millenials.html">Millienials(1990-2010)</a></li>
+              </ul>
+            </li> -->
+         <!--  <li><a href="login.html">Login</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul> 
+      </div>
+    </nav> --> -->
+
+    <button type="button" onclick="alert('Hello world!')">Click Here to Create a Login!</button>
+
+  <!--  </header>   -->
+  <aside>
+    <br />
+    <h1>Here is the latest News!</h1>
+    <br />
+    <br />
+    <hr />
+    <br />
+    <p> Hello here is some stuff to say.</p>
+    <p> Here is some more stuff.</p>
+    <p> Here is an article about how to setup a lot of different things.
+      Also, How to paint your windows!
+      <br />
+      <hr />
+      <br />
+      And How to prepare for Winter!
+    </p>
+  </aside>
+      
+        <div class="column" id="column1">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+         <div id="carousel">
+        <ul>
+            <figure><li><figcaption> Happy Couple # 1 having a great time today in New York City!!!</figcaption><img src="logo/artdeco2.jpg" alt="Couple 1" /></li></figure>
+            <figure><li><figcaption> Happy Couple # 2 having a great time today in New London Town!!!</figcaption><img src="logo/artdeco3.jpg" alt="Couple 2" /></li></figure>
+            <figure><li><figcaption> Happy Couple # 3 having a great time today in Paris, France!!!</figcaption><img src="logo/artdeco4.jpg" alt="Couple 3" /></li></figure>
+        </ul>
+      <script>
+       $(document).ready(function(){
+          // Set the interval to be 5 seconds
+          var i = setInterval(function(){
+          $("#carousel ul").animate({marginLeft:-480},1000,function(){
+            $(this).find("li:last").after($(this).find("li:first"));
+          $(this).css({marginLeft:0});
+         })
+      },5000);
+});
+  //window.onload = init;
+      
+      </script>
+    </div>
+    
+          <!-- <h2>Couples Example 1</h2>
+          <img src="logo/artdeco2.jpg" class="align-center small"/>
+          <p> This is the paragraph for Column 1
+            Here it is again for Column 1.
+          </p> -->
+        </div>
+
+        <!-- <div class="column" id="column2">
+          <h2>Couples with Kids Example 2</h2>
+          <img src="logo/artdeco3.jpg" class="align-center small"/>
+          <p> This is the paragraph for Column 2
+            Here it is again for Column 2.
+          </p>
+        </div>
+        <div class="column" id="column3">
+          <h2>Married Couple Example 3</h2>
+          <img src="logo/artdeco4.jpg" class="align-center small"/>
+          <p> This is the paragraph for Column 3
+            Here it is again for Column 3.
+          </p>
+        </div> -->
+  
+    <footer>
+    Copyright @ 2014 MDF
+    </footer>
+
+
+    </div> <!-- for container end -->
+  <!-- </div> -->
+
+  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>

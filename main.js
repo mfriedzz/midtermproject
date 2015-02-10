@@ -7,7 +7,13 @@
 
 	var Couple.prototype.render = function () {
 
-		this.$el= $
+		this.$el = $('#coupledetail').clone()
+		.attr('id', "");
+		console.log("got here1");
+		// find couple 
+		this.$el.find('couple-name').text(this.coupleDefined);
+		console.log("got here",this.coupleDefined);
+		return this.$el;
 
 	};
 
@@ -346,7 +352,10 @@ $(document).on('ready', function() {
 
 
 
+	$('.couplesdisplay').append(couple1.render());
+	console.log(couple1.render());
 
+	console.log(couple1);
  
 
 

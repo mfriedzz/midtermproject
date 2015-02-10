@@ -1,5 +1,8 @@
 /* compatible couples css */
 
+.templates {
+  display: none;
+}
 
 .coupleprofile {
 	position:absolute;
@@ -11,15 +14,18 @@
 
 }
 
+.couple {
+	margin: 10px;
+	border-left: 2px solid #999;
+	padding: 20px;
+}
 .couplessearch {
 	position: relative;
 	display: block;
 	float: right;
 }
 
-.templates {
-  display: none;
-}
+
 
 h1 { font-family: 'Limelight', cursive, serif;
 	 position: relative;

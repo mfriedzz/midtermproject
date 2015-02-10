@@ -5,24 +5,26 @@
 		this.children = children;
 	};
 
-	var Couple.prototype.render = function () {
+	Couple.prototype.render = function () {
 
-		this.$el = $('#coupledetail').clone()
+		this.$el = $('.couple-details-template').clone()
 		.attr('id', "");
-		console.log("got here1");
+	
 		// find couple 
-		this.$el.find('couple-name').text(this.coupleDefined);
-		console.log("got here",this.coupleDefined);
+		this.$el.find('.couple-name').text(this.coupleDefined);
+		
+		//console.log("got here after find",this.coupleDefined);
+		console.log("This is being returned ", this.$el);
 		return this.$el;
 
 	};
 
-	var Couple.protoype.search = function () {
+	Couple.prototype.search = function () {
 
 
 	};
 
-	var Couple.prototype.addCouple () {
+ Couple.prototype.addCouple = function() {
 
 	};
 
@@ -105,11 +107,6 @@
 		partner2PetName: "Ruby",
 		partner2Married: true,
 		partner2CivilUnion: false
-
-
-
-
-
 
 	};
 
@@ -350,13 +347,46 @@ var couple1 = new Couple(coupleDefined1,children1);
 // Beginning of Jquery	
 $(document).on('ready', function() {
 
+	
 
+	$('.couplesdisplay').append(couple2.render());
+	//console.log(couple1.render());
 
-	$('.couplesdisplay').append(couple1.render());
-	console.log(couple1.render());
+	
+ var form1 = $("#form1") 
+  		
+  		
+  		
+  		
+  		.addClass('quotesinput')
 
-	console.log(couple1);
- 
+  		.append('<input class="quote-input"> Please Input the Quotes </input> <br> <br>')
+  	
+  		.append('<br><input class="author-input"> Please Input the Quotes Author</input> <br> <br>')
+  		
+  		.append('<button class="submitbtn" type="submit"> Submit</button>');
+
+  			$(".submitbtn").click(function (e) {
+ 					e.preventDefault();
+				
+					var quoteVal  = $(".quote-input").val();
+					var authorVal = $(".author-input").val();
+     	
+     		$(".container").append("#txtMessage").val(quoteVal);
+     		$(".container").append("#txtMessage").val(authorVal);
+     		console.log(quoteVal, authorVal);
+     		var newQuote = new Quotes(quoteVal, authorVal);
+     		$('.quotelibraries').append(newQuote.render());
+
+		   // $('.rating').on('focusin', function(){
+		   // 			console.log("got here222");
+		   // 	});
+
+		// $('.rating').children("li").text("here");
+			$('.rating').text("here");
+
+ 		}); //end of submit button 
+
 
 
  

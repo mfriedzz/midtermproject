@@ -62,18 +62,18 @@
      
     <!--   Search Form -->
       <form class="search">
-        <label>Age Range Min Age: <input type="number" name="minage" ud="minage"/> <br>
-              Age Range Max Age: <input type="number" name="maxage" id="maxage" /> </label>
+        <label>Age Range Min Age: <input type="number" name="minage" id="minage" Value="18" min="18" max="115"/> <br>
+              Age Range Max Age: <input type="number" name="maxage" id="maxage" Value="18" min="18" max="115" /> </label>
             <br >
             Children:
-            <input type = "checkbox" name="haschildren" Value="Yes" id="childrenyes" /> Yes
-            <input type = "checkbox" name="nochildren"  Value="No" checked="checked" id="childrenno" /> No
+            <input type = "radio" name="children" Value="Yes" id="childrenyes" /> Yes
+            <input type = "radio" name="children"  Value="No" checked="checked" id="childrenno" /> No
             Pets:
-            <input type = "checkbox" name="haspets" Value="Yes" id="petsyes"/> Yes
-            <input type = "checkbox" name="nopets"  Value="No" checked="checked"  id="petsno"/> No
+            <input type = "radio" name="pets" Value="Yes" id="petsyes"/> Yes
+            <input type = "radio" name="pets"  Value="No" checked="checked"  id="petsno"/> No
             Served in Military:
-            <input type = "checkbox" name="servedinmilitary" Value="Yes" id="militaryyes" /> Yes
-            <input type = "checkbox" name="nomilitaryservice"  Value="No" checked="checked" id="militaryno" /> No
+            <input type = "radio" name="militaryservice" Value="Yes" id="militaryyes" /> Yes
+            <input type = "radio" name="militaryservice"  Value="No" checked="checked" id="militaryno" /> No
 
             <br><br>
             <input type = "submit" name="submitform" value="Search" id="submitbutton"/>

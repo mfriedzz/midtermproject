@@ -21,66 +21,80 @@
 	
 	<div class ="container-fluid">
         
-		/* Navigation Bar */
+		<!-- /* Navigation Bar */ -->
+   
         <!-- <nav class="navbar navbar-inverse" role="navigation"> -->
         <nav class="navbar navbar-inverse  navbar-fixed-top navbar-header" role="navigation">
           <div class="container-fluid">
           <!-- <label id=projectname>Project Name</label> -->
-          <form class="navbar-form navbar-right" role="Email">
-              <div class="form-group">
-              <a class="navbar-brand" href="#">
-              <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo">
-              <a class="form-control"  href="login2.html">Login</a></li>
-              <a class="form-control"  href="about.html">About</a></li>
-              <a class="form-control"  href="compatiblecouples.html">Compatible Couples</a></li>
-                <input type="text" class="form-control" placeholder="Email">
-                <input type="text" class="form-control" placeholder="Passsword">
-                <button type="submit" class="btn btn-success">Sign In</button>
-                </nav>
-              </div>
-             </div>
-              
-        </form>
-	</nav>
+            <form class="navbar-form navbar-right" role="Email">
+                <div class="form-group">
+                <a class="navbar-brand" href="#">
+                <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo">
+                <a class="form-control"  href="login2.html">Login</a></li>
+                <a class="form-control"  href="about.html">About</a></li>
+                <a class="form-control"  href="compatiblecouples.html">Compatible Couples</a></li>
+                  <input type="text" class="form-control" placeholder="Email">
+                  <input type="text" class="form-control" placeholder="Passsword">
+                  <button type="submit" class="btn btn-success">Sign In</button>
+                </div>           
+            </form>
+          </div>      
+        </nav>
+   
+ <!--  </div>  /* end row */ -->
 
-	<div class="row">
 
-	<div class="col-md-6 coupleprofile">
+ <div class="row">
+	 
+   <div class="col-md-6 coupleprofile">
 		
 		<aside>
-			<h2>Your Profile</h2>
-			<h2>Profile Statistics</h2>
+			   <h2 class="profile">Your Profile</h2>
+			   <h2 class="profilestatistics">Profile Statistics</h2>
 		
-			
-			<h3> Your Couple Pictures </h3>
-		</aside>
+			       <h3> Your Couple Pictures </h3>
+		  </aside>
+    </div> <!-- /* End of div class coupleprofile */ -->
 		
-	<div class="col-md-6 couplessearch">
-		<h2>Compatible Couples Search Crieria</h2>
+	<div class="  col-md-6 couplessearch">
+		<h2>Compatible Couples Search Criteria</h2>
+     
+    <!--   Search Form -->
+      <form class="search">
+        <label>Age Range Min Age: <input type="number" name="minage" ud="minage"/> <br>
+              Age Range Max Age: <input type="number" name="maxage" id="maxage" /> </label>
+            <br >
+            Children:
+            <input type = "checkbox" name="haschildren" Value="Yes" id="childrenyes" /> Yes
+            <input type = "checkbox" name="nochildren"  Value="No" checked="checked" id="childrenno" /> No
+            Pets:
+            <input type = "checkbox" name="haspets" Value="Yes" id="petsyes"/> Yes
+            <input type = "checkbox" name="nopets"  Value="No" checked="checked"  id="petsno"/> No
+            Served in Military:
+            <input type = "checkbox" name="servedinmilitary" Value="Yes" id="militaryyes" /> Yes
+            <input type = "checkbox" name="nomilitaryservice"  Value="No" checked="checked" id="militaryno" /> No
 
-		<div class="templates">
-		   <div class="couple-details-template" class="couple">
-		   	<h3 class="couple-name">Couple Name</h3>
-		   	<div class="couplesdisplay"></div>
-		   	</div> <!-- /* end of templates class */ -->
+            <br><br>
+            <input type = "submit" name="submitform" value="Search" id="submitbutton"/>
+            
+
+      </form>
+          <h2> Couple Search Results </h2>
+          <div class="couplesearchresults"></div>
+    </div> <!-- /* end of couplessearch */ -->
+		      
+
+     
+
+	 </div><!-- /* end of Row class */ -->
+
 		
-		</div> <!-- /* end of class templates */ -->
-			
-	</div> <!-- /* end of couplessearch */ -->
-		
-		<footer>
-    			Copyright @ 2014 MDF
-    	</footer>
-
-        
-
-     </div> <!-- /* End of div class coupleprofile */ -->
-
-	</div> <!-- /* end of Row class */ -->
-		
-     </div> <!-- /* Container End */ -->
-
-
+</div> <!-- /* Container End */ -->
+<!-- 
+    <footer>
+          Copyright @ 2015 MDF
+    </footer> -->
 
      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>

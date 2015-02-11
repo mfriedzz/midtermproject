@@ -7,27 +7,62 @@
 
 	Couple.prototype.render = function () {
 
-		this.$el = $('.couple-details-template').clone()
-		.attr('id', "");
+		for (var key in this.coupleDefined){
+			//console.log(key);
+			if (this.coupleDefined[key] === "Rich")  {
+			console.log("Here is the First and Last Name", this.coupleDefined.partner1FirstName, this.coupleDefined.partner1LastName);
+			$('.couplesearchresults').append(this.coupleDefined.partner1FirstName + " ");
+			$('.couplesearchresults').append(this.coupleDefined.partner1LastName);
+
+
+								// .after().text(this.coupleDefined.partner1LastName);
+
+			/*$('.couplesearchresults').append().text("Hello1");
+			$('.couplesearchresults').append().text("Hello2");*/
+
+
+			}
+			
+
+		}
+
+		//this.$el = $('.couple-details-template')
 	
 		// find couple 
-		this.$el.find('.couple-name').text(this.coupleDefined);
-		
+		//console.log("Here is render on Couple2",this.coupleDefined);
+		//this.$el.find('.couple-name').text(this.coupleDefined);
+		//this.$el.append().text(this.coupleDefine);
+
 		//console.log("got here after find",this.coupleDefined);
-		console.log("This is being returned ", this.$el);
-		return this.$el;
+		//console.log("This is being returned ", this.$el);
+		//return this.$el;
 
 	};
 
 	Couple.prototype.search = function () {
-
-
-	};
-
- Couple.prototype.addCouple = function() {
+		
 
 	};
 
+	Couple.prototype.addCouple = function() {
+
+	};
+
+	 function loggedInCouple (loggedInCouple){
+			console.log("got here", loggedInCouple);
+			//Couple.call(this,loggedInCouple);
+
+			// var temp = Couple.call(this,loggedInCouple);
+				var children = this.loggedInCouple.children;
+			console.log("children ", loggedInCouple.children);
+			$('.profilestatistics').after("<div>I'm a div!</div>").text(children);
+			//$('.profile').append().text("Hello!!mf");
+			//console.log("temp", temp);
+			//return children;
+
+	};
+
+	
 
 // Defining Couple # 1 Object to be passed to the Couple Class
 	var coupleDefined1 = {
@@ -201,12 +236,12 @@
 		partner2MilitaryDetails: "   ",
 		partner2AllowCoriCheck: true,
 		partner2Activities: [],
-		partner1Pet: true,
-		partner1PetType: "cat",
-		partner1PetBreed: "Tomcat",
-		partner1PetName: "Suddy",
+		partner2Pet: true,
+		partner2PetType: "cat",
+		partner2PetBreed: "Tomcat",
+		partner2PetName: "Suddy",
 		partner1Married: false,
-		partner1CivilUnion: false
+		partner2CivilUnion: false
 
 
 
@@ -327,10 +362,6 @@
 		partner1PetName: null,
 		partner1Married: false,
 		partner1CivilUnion: true
-
-
-
-
 		};
 
 	
@@ -342,6 +373,17 @@ var couple1 = new Couple(coupleDefined1,children1);
  console.log("Couple 2", couple2);
  var couple3 = new Couple(coupleDefined3, 0);
  console.log("Couple 3", couple3);
+
+ var coupleloggedin = loggedInCouple(couple1);
+ 
+ 	//var coupleloggedin = loggedInCouple(couple1);
+
+ 		// console.log("Logged in Couple: ", coupleloggedin);
+
+
+//var coupleloggedindisplay = couple1.renderloggedinprofile(couple1);
+	//	console.log("Rendered Couple ", coupleloggedindisplay);
+
 	
 
 // Beginning of Jquery	
@@ -349,10 +391,40 @@ $(document).on('ready', function() {
 
 	
 
+
 	$('.couplesdisplay').append(couple2.render());
+	$('.couplesdisplay').append(couple3.render());
+	$('.couplesdisplay').append(couple1.render());
+
+
+	// $('.couplesearchresults').before("Hello1");
+	// $('.couplesearchresults').after("Hello2");
+	
 	//console.log(couple1.render());
 
 	
+	//search on items inputted by user
+
+		var search = $(".search");
+   		var items  = $("#childrenyes");
+
+   		$("#submitbutton").on("click", function(e){
+
+        var v = search.val().toLowerCase();
+       if(v == "") { 
+           items.show();
+           return;
+       }
+        $.each(items, function(){
+            var it = $(this);
+            var lb = it.find("label").text().toLowerCase();
+            if(lb.indexOf(v) == -1) 
+                 it.hide();
+        });
+    });        
+
+ //  End Search on items
+
  var form1 = $("#form1") 
   		
   		

@@ -1,36 +1,58 @@
 /* compatible couples css */
 
-.templates {
 
-/* was display: none;
+
+form {
+
+border: 5px solid black;
+}
+
+
+#submitbutton {
+  color: black;
+  background-color: silver;
+  border-radius: 1px;
+
 }
 
 .coupleprofile {
-	position:absolute;
+	position: relative;
+  top: 100px;
+  /*position:absolute;
 	top: 15%;
 	bottom 15%;
 	height: 35%;
 	float:left;
-	display: block;
+	display: block;*/
 
 }
 
+.couplessearch {
+  position: relative;
+  top: 100px;
+  /*position: relative;
+  display: block;
+  float: right;*/
+}
+
+
 .couple {
+
 	margin: 10px;
 	border-left: 2px solid #999;
 	padding: 20px;
 }
-.couplessearch {
-	position: relative;
-	display: block;
-	float: right;
+
+
+
+.couplesearchresults {
+
+    border: 5px solid black;
+    border-radius: 2px;
 }
-
-
-
 h1 { font-family: 'Limelight', cursive, serif;
 	 position: relative;
-     /* background-color: red;*/
+     /* background-color: red;
      height: 100px;
      width: 350px;
      border: 5px solid white; 
@@ -40,7 +62,7 @@ h1 { font-family: 'Limelight', cursive, serif;
       font-weight: 400;
       font-size: 28px;
       text-shadow: 4px 4px 4px #aaa; 
-      text-transform: capitalize;
+      text-transform: capitalize; */
     }
 
 	h2 {
@@ -57,8 +79,8 @@ h1 { font-family: 'Limelight', cursive, serif;
     }
 
 
- footer {
- 	position: relative;
+ /*footer {
+ 	position: absolute;
   border: 5px solid black;
   bottom:10px;
   width: 100%;
@@ -68,4 +90,4 @@ h1 { font-family: 'Limelight', cursive, serif;
  	text-align: center;
  	padding: 20px;
 
- }
+ }*/

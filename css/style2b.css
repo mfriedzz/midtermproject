@@ -299,8 +299,8 @@ li > a:only-child:after { content: ''; }
  }
 
 img.custom {
-  width: 16%;
-  height: 16%;
+  width: 15%;
+  height: 15%;
 /*  width: 200px;
   height: 95px;*/
 }

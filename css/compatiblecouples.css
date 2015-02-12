@@ -15,9 +15,15 @@ border: 5px solid black;
 
 }
 
+aside {
+  height: 336px;
+  width: 80%;
+}
 .coupleprofile {
 	position: relative;
-  top: 100px;
+  top: 120px;
+ 
+
   /*position:absolute;
 	top: 15%;
 	bottom 15%;

@@ -43,7 +43,7 @@
 			var self = this;
 
 			var answers = ["false", "false", "false"];
-			console.log("answers array", answers);
+			//console.log("answers array", answers);
 				//this.coupleDefined = coupleDefined;
 				this.minage = minage;
 				this.maxage = maxage;
@@ -64,7 +64,7 @@
    								console.log("Within the Age limit");
    				 } // partner age if end
 
-   				 if  ((haschildren == self.coupleDefined.partner1HasChildren) || (haschildren == self.coupleDefined.partner2HasChildren)){
+   				 if  ((haschildren === self.coupleDefined.partner1HasChildren) || (haschildren === self.coupleDefined.partner2HasChildren)){
    				 		 answers.push("Have Children");
    				 			console.log("Have Children");
    				 } // children end if 
@@ -84,72 +84,25 @@
 
 				}); // end of filter
 
-		 								$('.couplesearchresults').append(self.coupleDefined.coupleid + " " + '<br>')
+				for (var i=0; i<answers.length; i++){
+
+						if (answers[i] !== 'false') {
+								console.log("answersi", i, answers.length,answers[i]);
+								console.log("New array: ", answers[0], answers[1], answers[2]);	
+								$('.couplesearchresults').append('Couple ID' +self.coupleDefined.coupleid + " " + '<br>')
 														 .append(self.coupleDefined.partner1FirstName + " ")
    				 										 .append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 .append(self.coupleDefined.partner2FirstName + " ")
 														 .append(self.coupleDefined.partner2LastName);
+						} // if end								
 
-			console.log("New array: ", answers[0], answers[1], answers[3]);
+					} // end of for loop		 								
+			//console.log("New array: ", answers[0], answers[1], answers[2]);
 		  return answers;
 		//console.log("New array: ", newArray);
 		//return false;
 
-			 // Couple call(this, minage, maxage, haschildren, haspets, militaryservice).filter(function(this) {
-
-				// 		if (this.haschildren = true){
-			 // 			console.log(this.coupleDefined.partner1LastName);
-				//  		}
-			 		
-
-				//  )};
-				//console.log("from search ", this.coupleDefined.partner1LastName);
-				
-				//coupleDefined.filter(function(coupleDefined) {
-							//if (this.haschildren = coupleDefined.partner2NumberOfChildren){
-							
-							//console.log(" got in filter for pets ", coupleDefined.partner1LastName);
-					
-						//	if (this.haspets === coupleDefined.partner1Pets){
-						//		  console.log(" They have Pets ! " + coupleDefined.partner1LastName);
-								 
-						//	} else {
-						//		console.log(" They DO NOT HAVE Pets ! " + coupleDefined.partner1LastName);
-								
-						//	} //end else
-						
-					//});
-
-						
-			//console.log("got here in search!");
-			//var search = $(".couplesearchresults");
-  	// 		var items  = $("#childrenyes");
-
-  //  		$("#submitbutton").on("click", function(e){
-
-  //       var v = search.val().toLowerCase();
-  //      if(v == "") { 
-  //          items.show();
-  //          return;
-     //   }
-  //       $.each(items, function(){
-  //           var it = $(this);
-  //           var lb = it.find("label").text().toLowerCase();
-  //           if(lb.indexOf(v) == -1) 
-  //                it.hide();
-  //       });
-
-		// 	for (var key in this.coupleDefined){
-		// 	//console.log(key);
-		// 	if (this.coupleDefined[key] === "Rich")  {
-		// 	console.log("Here is the First and Last Name", this.coupleDefined.partner1FirstName, this.coupleDefined.partner1LastName);
-		// 	$('.couplesearchresults').append(this.coupleDefined.partner1FirstName + " ");
-		// 	$('.couplesearchresults').append(this.coupleDefined.partner1LastName);
-
-
-		// 	}
-		// }
-		
+			 
 
 	}; // end of Couple Prototype 
 
@@ -157,17 +110,22 @@
 
 	};
 
-	 function loggedInCouple (loggedInCouple){
+	 Couple.prototype.loggedInCouple = function(loggedInCouple){
+	 		var self = this;
+	 		console.log("self", self);
 			//console.log("got here", loggedInCouple);
 			//Couple.call(this,loggedInCouple);
 
 			// var temp = Couple.call(this,loggedInCouple);
-				var children = this.loggedInCouple.children;
+				//var children = self.loggedInCouple.children;
+				//console.log("children", children);
 		//	console.log("children ", loggedInCouple.children);
-			$('.profilestatistics').after("<div>I'm a div!</div>").text(children);
-			//$('.profile').append().text("Hello!!mf");
-			//console.log("temp", temp);
-			//return children;
+		$('.profilestatistics').append('<br>' + 'Couple ID' + self.coupleDefined.coupleid + " " + '<br>')
+								.append(self.coupleDefined.partner1FirstName + " ")
+   				 				.append(self.coupleDefined.partner1LastName + " " + '<br>')
+								.append(self.coupleDefined.partner2FirstName + " ")
+								.append(self.coupleDefined.partner2LastName);
+		
 
 	};
 
@@ -279,7 +237,7 @@
 
 
 
-	};
+	}; // end of Couple 1
 
 	// Defining Couple # 2 Object to be passed to the Couple Class
 	var coupleDefined2 = {
@@ -311,9 +269,9 @@
 		partner1WorkTwitter: "  xx",
 		partner1WorkJobPosition: " Fire Fighter",
 		partner1WorkJobDescription: " Hazardous Materials",
-		partner1HasChildren:true,
+		partner1HasChildren:'true',
 		partner1NumberOfChildren: 2,
-		partner1MilitaryService: false,
+		partner1MilitaryService: 'false',
 		partner1MilitaryDetails: "   ",
 		partner1AllowCoriCheck: true,
 		partner1Activities: [],
@@ -353,9 +311,9 @@
 		partner2WorkTwitter: "  ",
 		partner2WorkJobPosition: " Nurse Practioner",
 		partner2WorkJobDescription: " Newton City Hospital",
-		partner2HasChildren:false,
+		partner2HasChildren:'false',
 		partner2NumberOfChildren: 0,
-		partner2MilitaryService: false,
+		partner2MilitaryService: 'false',
 		partner2MilitaryDetails: "   ",
 		partner2AllowCoriCheck: true,
 		partner2Activities: [],
@@ -507,7 +465,8 @@ var couple1 = new Couple(coupleDefined1,children1);
  var couple3 = new Couple(coupleDefined3, 0);
  //console.log("Couple 3", couple3);
 
- var coupleloggedin = loggedInCouple(couple1);
+ //var coupleloggedin = loggedInCouple(couple1);
+ couple1.loggedInCouple();
  
  	//var coupleloggedin = loggedInCouple(couple1);
 

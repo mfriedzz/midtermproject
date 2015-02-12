@@ -78,15 +78,15 @@
    				 			return answers.push("Military Veteran");
    				 			console.log("Military Veterarn");
    				 } // end military service
-   				 		
+   				 		return couple;
 
    				// } // end of If
 
 				}); // end of filter
 
-		 								$('.couplesearchresults').append(self.coupleDefined.coupleid + " ")
+		 								$('.couplesearchresults').append(self.coupleDefined.coupleid + " " + '<br>')
 														 .append(self.coupleDefined.partner1FirstName + " ")
-   				 										 .append(self.coupleDefined.partner1LastName + " " )
+   				 										 .append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 .append(self.coupleDefined.partner2FirstName + " ")
 														 .append(self.coupleDefined.partner2LastName);
 

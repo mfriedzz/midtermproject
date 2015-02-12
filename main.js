@@ -40,35 +40,69 @@
 	};
 
 	Couple.prototype.search = function (minage, maxage, haschildren, haspets, militaryservice) {
+			var self = this;
 
-			var newArray = [];
-				this.coupleDefined = coupleDefined;
+			var answers = ["false", "false", "false"];
+			console.log("answers array", answers);
+				//this.coupleDefined = coupleDefined;
 				this.minage = minage;
 				this.maxage = maxage;
 				this.haschildren = haschildren;
 				this.haspets = haspets;
-				this.militaryservice;
+				this.militaryservice = militaryservice;
+		 //call(this, minage, maxage, haschildren, haspets, militaryservice);
+		//console.log("couple id", this.coupleDefined.coupleid);
+		
+		 var results = _.filter (self, function(couple) {
+		//console.log("couple id", self.coupleDefined.coupleid);
+		//console.log("minage", minage, self.coupleDefined.partner1Age );
+		console.log("haschildren ", haschildren, self.coupleDefined.partner1HasChildren );
+					//console.log("value", haschildren, self.coupleDefined.partner1HasChildren);
+   				 if  ((minage >= self.coupleDefined.partner1Age || minage >= self.coupleDefined.partner2Age)
+   				 	&& (maxage <= self.coupleDefined.partner1Age || minage <= self.coupleDefined.partner2Age)) {
+   				 			  answers.push = "Between " + self.coupleDefined.partner1Age + " Years Old"  + self.coupleDefined.partner2Age + " Years Old";
+   								console.log("Within the Age limit");
+   				 } // partner age if end
 
-		var newArray = _.filter (coupleDefined, function(couple) {
-   				 return ((couple.minage>=this.coupleDefined.partner1Age || couple.minage>= this.coupleDefined.partner2Age)
-   				 	&& (couple.maxage<=this.coupleDefined.partner1Age || couple.minage<= this.coupleDefined.partner2Age))
-   				 	|| ((couple.haschildren === this.coupleDefined.partner1HasChildren) || (couple.haschildren === this.coupleDefined.partner2HasChildren))
-   				 	|| ((couple.haspets === this.coupleDefined.partner1Pets) || (couple.haspets === this.coupleDefined.partner2Pets))
-   				 	|| ((couple.miltaryservice === this.coupleDefined.partner1MilitaryService) || (couple.miltaryservice === this.coupleDefined.partner2MilitaryService));
+   				 if  ((haschildren == self.coupleDefined.partner1HasChildren) || (haschildren == self.coupleDefined.partner2HasChildren)){
+   				 		 answers.push("Have Children");
+   				 			console.log("Have Children");
+   				 } // children end if 
+   				 
+   				 if  ((haspets === self.coupleDefined.partner1Pets) || (haspets === self.coupleDefined.partner2Pets)){
+   				 			return answers.push("Have Pets");
+   				 			console.log("Have Pets");
+   				 } // pets end if
+   				 
+   				 if  ((militaryservice === self.coupleDefined.partner1MilitaryService) || (militaryservice === self.coupleDefined.partner2MilitaryService)) {
+   				 			return answers.push("Military Veteran");
+   				 			console.log("Military Veterarn");
+   				 } // end military service
+   				 		
 
-				});
-		  //return newArray;
-		console.log("New array: ", newArray);
-		return false;
+   				// } // end of If
 
-				// Couple call(this, minage, maxage, haschildren, haspets, militaryservice).filter(function(this) {
+				}); // end of filter
+
+		 								$('.couplesearchresults').append(self.coupleDefined.coupleid + " ")
+														 .append(self.coupleDefined.partner1FirstName + " ")
+   				 										 .append(self.coupleDefined.partner1LastName + " " )
+														 .append(self.coupleDefined.partner2FirstName + " ")
+														 .append(self.coupleDefined.partner2LastName);
+
+			console.log("New array: ", answers[0], answers[1], answers[3]);
+		  return answers;
+		//console.log("New array: ", newArray);
+		//return false;
+
+			 // Couple call(this, minage, maxage, haschildren, haspets, militaryservice).filter(function(this) {
 
 				// 		if (this.haschildren = true){
-				// 			console.log(this.coupleDefined.partner1LastName);
-				// 		}
-				// 			return 
+			 // 			console.log(this.coupleDefined.partner1LastName);
+				//  		}
+			 		
 
-				// };
+				//  )};
 				//console.log("from search ", this.coupleDefined.partner1LastName);
 				
 				//coupleDefined.filter(function(coupleDefined) {
@@ -507,8 +541,9 @@ $(document).on('ready', function() {
 		//var search = $(".search");
    		//var items  = $("#childrenyes");
 
-   		$("#submitbutton").on("click", function(){
-   		
+   		$("#submitbutton").on("click", function(e){
+   			e.preventDefault();
+   			//return false;
    			var minage = $('input[name=minage]').val();
    			var maxage = $('input[name=maxage]').val();
 
@@ -517,10 +552,10 @@ $(document).on('ready', function() {
    			var haspets = $('input[name=pets]:checked').val();
    			var militaryservice = $('input[name=militaryservice]:checked').val();
    			// console.log("got clickec");
-   			// return false;
-   			couple2.search(minage, maxage, haschildren, haspets, militaryservice);
-   			return false;
    			
+   			couple2.search(minage, maxage, haschildren, haspets, militaryservice);
+   		
+   			//	couple3.search(minage, maxage, haschildren, haspets, militaryservice);
 			
    			// var search = $(".search");
    			// var items  = $("#childrenyes");

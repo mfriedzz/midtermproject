@@ -5,15 +5,26 @@
 }
 
 body {
+  
   /*border: 3px solid red;*/
-  background-color: #FF8855;
+  background-color: #d382d8; /* was #ff8855 */
   margin 0px;
   font-family: "Times New Roman" , serif;
   font-weight: 100;
   font-size: 16px;
   color:blue;
 }
+.navbar-header {
+  float:none;
+}
 
+#submitbutton {
+  
+  color: black;
+  background-color: #ff8855;
+  border-radius: 1px;
+
+}
 #container {
   /*border: 3px solid black;*/
   /*width: 960px;*/
@@ -112,17 +123,18 @@ header {
  }
 
 #Logo{
-  /*border: 3px solid black; */
-     /*background-color: rgba(255,0,0,0.5);*/
-     /* padding: 0% 0% 0% 0%;*/
 
+
+  border: 3px solid black; 
+     /*background-color: rgba(255,0,0,0.5);*/
+    
+  position: relative;
       display: inline-block;  /* was inline */
-      height: 35px;
-      /*text-shadow: 3px 3px 3px #aaa; */
-      
-   /* margin: .5% .5% .5% 25%;*/
- 
-  /*float: left;*/
+      height: 60px;
+      width: 191px;
+      top: -21px;
+      bottom: 1px;
+  
   
   }
 
@@ -183,74 +195,7 @@ nav a {
   clear:both;
 }
 
-nav a:hover {
-  border: 3px solid white;
-  background-color: #66BB66;
-}
-
-nav ul {
-    border: 3px solid black;
-    padding: 12px;
-    margin: 15px;
-    list-style: none;
-    position: relative;
-    display: inline-block;
-    }
-     
-nav ul li {
-    /*border: 1px solid blue;*/
-    float:left;
-    display:list-item;
-    list-style: none; 
-    background-color:#64abfb;
-    /*border-bottom: 5px solid #2ecc71;*/
-    }
   
-nav ul li a {
-   /* border: 3px solid red;*/
-  display:inline-block;
-    padding:15px 10px;  
-     
-    color:#FFF;
-    font-size:20px;
-    text-decoration:none;
-  /* font-family: 'Bree Serif', 'serif';*/
-}
-  
-li a:hover { background-color: #2ecc71; }
-
-/* The Dropdown Styles */
-/* =================== */
-  
-/* Hide Dropdowns by Default */
-nav ul ul {
-    display: none;
-    position: absolute; top: 58px;
-}
-     
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-    display:list-item;
-}
-     
-/* First Tier Dropdown */
-nav ul ul li {
-    width:170px;
-    float:none;
-    position: relative;
-    border-bottom:none;
-}
-  
-/* Second, Third and more Tiers */
-nav ul ul ul li {
-    position: absolute relative;
-    top:-58px; 
-    left:170px;
-}
-
-/* Change this in order to change the Dropdown symbol */
-li > a:after { content: ' >>'; } 
-li > a:only-child:after { content: ''; }     
 
 
 

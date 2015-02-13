@@ -10,7 +10,7 @@ border: 5px solid black;
 
 #submitbutton {
   color: black;
-  background-color: silver;
+  background-color: white;
   border-radius: 1px;
 
 }
@@ -19,6 +19,8 @@ aside {
   height: 336px;
   width: 80%;
 }
+
+
 .coupleprofile {
 	position: relative;
   top: 120px;
@@ -33,7 +35,14 @@ aside {
 
 }
 
+.profile {
+  text-decoration: underline;
+}
+.profilestatistics h2 {
+    text-decoration: underline;
+}
 .couplessearch {
+  background-color: #ff8855;
   position: relative;
   top: 100px;
   /*position: relative;
@@ -56,6 +65,7 @@ aside {
     border: 5px solid black;
     border-radius: 2px;
 }
+
 h1 { font-family: 'Limelight', cursive, serif;
 	 position: relative;
      /* background-color: red;
@@ -84,6 +94,31 @@ h1 { font-family: 'Limelight', cursive, serif;
     	border: 5px solid black;
     }
 
+#Logo{
+  
+  border: 3px solid black; 
+     /*background-color: rgba(255,0,0,0.5);*/
+    
+  position: relative;
+      display: inline-block;  /* was inline */
+      height: 60px;
+      width: 191px;
+      top: -21px;
+      bottom: 1px;
+
+      /*text-shadow: 3px 3px 3px #aaa; */
+      
+   /* margin: .5% .5% .5% 25%;*/
+ 
+  /*float: left;*/
+  
+  }
+
+  
+
+  #logo img {
+    width: 100%;
+  }
 
  /*footer {
  	position: absolute;

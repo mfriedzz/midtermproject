@@ -30,12 +30,13 @@
             <form class="navbar-form navbar-left" >
                 <div class="form-group">
                 <a class="navbar-brand" href="#">
-                <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo">
+            <!--     <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" class=" align-left custom" id="Logo"> -->
+                   <img alt="Brand" src="logo/purplepeople2.gif" alt="logo" id="Logo">
                 <a class="form-control"  href="login2.html">Login</a></li>
                 <a class="form-control"  href="about.html">About</a></li>
                 <a class="form-control"  href="compatiblecouples.html">Compatible Couples</a></li>
                   <input type="text" class="form-control" placeholder="Email">
-                  <input type="text" class="form-control" placeholder="Passsword">
+                  <input type="text" class="form-control" placeholder="Password">
                   <button type="submit" class="btn btn-success">Sign In</button>
                 </div>           
             </form>
@@ -50,15 +51,15 @@
    <div class="col-md-6 coupleprofile">
 		
 		<aside>
-			   <h2 class="profile">Your Profile</h2>
-			   <h2 class="profilestatistics">Profile Statistics</h2>
+			   <h2 class="profile">Your Couple's Profile</h2>
+			   <h3 class="profilestatistics">Profile Statistics:</h3>
 		
-			       <h3> Your Couple Pictures </h3>
+			       <h3> Your Couple Pictures: </h3>
 		  </aside>
     </div> <!-- /* End of div class coupleprofile */ -->
 		
-	<div class="  col-md-6 couplessearch">
-		<h2 style="color:#000000">Compatible Couples Search Criteria</h2>
+	<div class= " col-md-6 couplessearch">
+		<h2 style="color:#000000">Compatible Couples Search Criteria:</h2>
      
     <!--   Search Form -->
       <form class="search">
@@ -66,11 +67,13 @@
               Age Range Max Age: <input type="number" name="maxage" id="maxage" Value="18" min="18" max="115" /> </label>
             <br >
             Children:
-            <input type = "radio" name="children" Value="true" id="childrenyes" /> Yes
+            <input type = "radio" name="children" Value='true' id="childrenyes" /> Yes
             <input type = "radio" name="children"  Value="false" checked="checked" id="childrenno" /> No
+            <br>
             Pets:
             <input type = "radio" name="pets" Value="true" id="petsyes"/> Yes
             <input type = "radio" name="pets"  Value="false" checked="checked"  id="petsno"/> No
+            <br>
             Served in Military:
             <input type = "radio" name="militaryservice" Value="true" id="militaryyes" /> Yes
             <input type = "radio" name="militaryservice"  Value="false" checked="checked" id="militaryno" /> No

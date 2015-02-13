@@ -10,32 +10,12 @@
 		for (var key in this.coupleDefined){
 			//console.log(key);
 			if (this.coupleDefined[key] === "Rich")  {
-		//	console.log("Here is the First and Last Name", this.coupleDefined.partner1FirstName, this.coupleDefined.partner1LastName);
-			//$('.couplesearchresults').append(this.coupleDefined.partner1FirstName + " ");
-			//$('.couplesearchresults').append(this.coupleDefined.partner1LastName);
-
-
-								// .after().text(this.coupleDefined.partner1LastName);
-
-			/*$('.couplesearchresults').append().text("Hello1");
-			$('.couplesearchresults').append().text("Hello2");*/
-
 
 			}
 			
-
 		}
 
-		//this.$el = $('.couple-details-template')
-	
-		// find couple 
-		//console.log("Here is render on Couple2",this.coupleDefined);
-		//this.$el.find('.couple-name').text(this.coupleDefined);
-		//this.$el.append().text(this.coupleDefine);
-
-		//console.log("got here after find",this.coupleDefined);
-		//console.log("This is being returned ", this.$el);
-		//return this.$el;
+		
 
 	};
 
@@ -51,84 +31,99 @@
 				this.haschildren = haschildren;
 				this.haspets = haspets;
 				this.militaryservice = militaryservice;
+
+
 		 //call(this, minage, maxage, haschildren, haspets, militaryservice);
+
+		// Filling in Couple Search Results
+			$('.couplesearchresults').append('<br>' + " This couple, Number #  " + self.coupleDefined.coupleid + " , Matches you in the Following Categories:  "  + '<br>');
 		
-		
-		// var results = _.filter (self, function(couple) {
-		//console.log("couple id", self.coupleDefined.coupleid);
-		//console.log("minage", minage, self.coupleDefined.partner1Age );
-		//console.log("haschildren ", haschildren, self.coupleDefined.partner1HasChildren );
-					//console.log("value", haschildren, self.coupleDefined.partner1HasChildren);
+		//var results = _.filter (self, function(couple) {
+				
+
    				 if  ((minage >= self.coupleDefined.partner1Age || minage >= self.coupleDefined.partner2Age)
    				 	&& (maxage <= self.coupleDefined.partner1Age || minage <= self.coupleDefined.partner2Age)) {
    				 			 // answers.push = "Between " + self.coupleDefined.partner1Age + " Years Old"  + self.coupleDefined.partner2Age + " Years Old";
    								console.log("Within the Age limit");
-   								$('.couplesearchresults').append().text(" are within your Age range " + " " + '<br>')
-   														 .append('Couple ID' +self.coupleDefined.coupleid + " " + '<br>')
+   								$('.couplesearchresults').append('<br>' + " This couple is within your Age range " + " " + '<br>')
+   														 .append('<br>' + ' Couple ID ' +self.coupleDefined.coupleid + " " + '<br>')
 														 .append(self.coupleDefined.partner1FirstName + " ")
    				 										 .append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 .append(self.coupleDefined.partner2FirstName + " ")
-														 .append(self.coupleDefined.partner2LastName);
-														 
+														 .append(self.coupleDefined.partner2LastName + " ");
+
+														 console.log("got here in Age Search", self.coupleDefined.partner1FirstName);
 						flag = true;
    				 } // partner age if end
-
+   
+   console.log(" Has Children search whois being searched value", haschildren, self.coupleDefined.partner1HasChildren, self.coupleDefined.partner2HasChildren);
    				 if  ((haschildren === self.coupleDefined.partner1HasChildren) || (haschildren === self.coupleDefined.partner2HasChildren)){
    				 	
    				 	
    				 		if (flag === false) {
-   				 					   $('.couplesearchresults').append().text(  " Have Children " + haschildren )
-   				 		 									  	.append( 'Couple ID' + self.coupleDefined.coupleid + " " + '<br>')
+
+
+   				 					  	
+   				 		 				$('.couplesearchresults').append( '<br>' + ' Couple ID ' + self.coupleDefined.coupleid + " " + '<br>' +'<br>' )
 														 		.append(self.coupleDefined.partner1FirstName + " ")
    				 										 		.append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 		.append(self.coupleDefined.partner2FirstName + " ")
-														 		.append(self.coupleDefined.partner2LastName + '<br>' + '=======================');
+														 		.append(self.coupleDefined.partner2LastName )
+														 		.append( '<br>' + " " + " Have Children " + haschildren + " " + '<br>' + '=======================' + '<br>');
 
-
-							flag = true;			
+									console.log("got in has children 1", flag, self.coupleDefined.partner2FirstName, self.coupleDefined.partner2LastName)
+								flag = true			
 
 						} else	{
-								$('.couplesearchresults').append().text(" Have Children " + haschildren + '<br>' + '=======================');	
+								$('.couplesearchresults').append('<br>' + " Have Children " + haschildren + '<br>' + '=======================' + '<br>')
+								
+					
+
 						}	// end if flag											
    				 			
    				 } // children end if 
-   				 
+   		
+   		console.log(" Has Pets search whois being searched value", haspets, self.coupleDefined.partner1Pets, self.coupleDefined.partner2Pets)
    				 if  ((haspets === self.coupleDefined.partner1Pets) || (haspets === self.coupleDefined.partner2Pets)){
 
    				 		if (flag === false) {
-   				 			    $('.couplesearchresults').append().text( " Have Pets " + haspets + '<br>')
-   				 										 .append('Couple ID' +self.coupleDefined.coupleid + " " + '<br>')
+   				 			    $('.couplesearchresults').append( '<br>' + " " + " Have Pets " + haspets + '<br>')
+   				 										 .append('<br>' + ' Couple ID ' + self.coupleDefined.coupleid + " " + '<br>')
 														 .append(self.coupleDefined.partner1FirstName + " ")
    				 										 .append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 .append(self.coupleDefined.partner2FirstName + " ")
-														 .append(self.coupleDefined.partner2LastName + '<br>' + '=======================');
-									flag = true;					 
+														 .append(self.coupleDefined.partner2LastName + '<br>' + '=======================' + '<br>')
+									flag = true;
+									console.log("Have Pets 1", flag)					 
 									} else {
-										$('.couplesearchresults').append().text(" Have Pets " + haspets + '<br>' + '=======================');
+										$('.couplesearchresults').append('<br>' + " Have Pets " + haspets + '<br>' + '=======================' + '<br>')
 							} // end if flag
-   				 			console.log("Have Pets");
+   				 			
    				 } // pets end if
-   				 
+   		
+   		console.log(" In military search whois being searched value", militaryservice, self.coupleDefined.partner1MilitaryService, self.coupleDefined.partner2MilitaryService);		 
    				 if  ((militaryservice === self.coupleDefined.partner1MilitaryService) || (militaryservice === self.coupleDefined.partner2MilitaryService)) {
    				 			
    				 		if (flag === false) {
-   				 			    $('.couplesearchresults').append().text( " Served in the Military " + militaryservice + '<br>')
-   				 										 .append('Couple ID' +self.coupleDefined.coupleid + " " + '<br>')
+   				 			    $('.couplesearchresults').append( '<br>' + " " + " Served in the Military " + militaryservice + '<br>' + " ")
+   				 										 .append('<br>' + ' Couple ID ' + self.coupleDefined.coupleid + " " + '<br>')
 														 .append(self.coupleDefined.partner1FirstName + " ")
    				 										 .append(self.coupleDefined.partner1LastName + " " + '<br>')
 														 .append(self.coupleDefined.partner2FirstName + " ")
-														 .append(self.coupleDefined.partner2LastName + '<br>' + '=======================');
+														 .append(self.coupleDefined.partner2LastName + '<br>' + '=======================' + '<br>')
+										console.log("Military Veteran if 1")
 							} else {
-								$('.couplesearchresults').append().text(" Served in the Military " + militaryservice  + '<br>' + '=======================');
+								$('.couplesearchresults').append('<br>' + " " + " Served in the Military " + militaryservice  + '<br>' + '=======================' + '<br>')
+								console.log("military flag ", flag)
 							} // end if flag
 														 
-   				 			console.log("Military Veterarn");
+   				 			
    				 } // end military service
    				 		//return couple;
 
    				// } // end of If
 
-		//		}); // end of filter
+	//			}); // end of filter
 
 
 			 
@@ -141,18 +136,20 @@
 
 	 Couple.prototype.loggedInCouple = function(loggedInCouple){
 	 		var self = this;
-	 		console.log("self", self);
+	 		//console.log("self", self);
 			
-		$('.profilestatistics').append('<br>' + 'Couple ID' + self.coupleDefined.coupleid + " " + '<br>')
+		$('.profilestatistics').append('<br>' + '<br>' + 'Couple ID # ' + self.coupleDefined.coupleid + " " + '<br>')
 								.append(self.coupleDefined.partner1FirstName + " ")
    				 				.append(self.coupleDefined.partner1LastName + " " + '<br>')
 								.append(self.coupleDefined.partner2FirstName + " ")
 								.append(self.coupleDefined.partner2LastName);
+
 		
 
 	};
 
-	
+
+// DATA 	
 
 // Defining Couple # 1 Object to be passed to the Couple Class
 	var coupleDefined1 = {
@@ -232,7 +229,7 @@
 		partner2MilitaryDetails: "   ",
 		partner2AllowCoriCheck: 'true',
 		partner2Activities: [],
-		partner2Pet: 'true',
+		partner2Pets: 'true',
 		partner2PetType: "dog",
 		partner2PetBreed: "Mutt",
 		partner2PetName: "Ruby",
@@ -253,7 +250,7 @@
 		childLikes: [],
 		childParent1: "Michael Friedman",
 		childParent2: "Katherine Friedman",
-		childPet: 'true',
+		childPets: 'true',
 		childPetType: "dog",
 		childPetBreed: "Mutt",
 		childPetName: "Ruby"
@@ -340,7 +337,7 @@
 		partner2MilitaryDetails: "   ",
 		partner2AllowCoriCheck: 'true',
 		partner2Activities: [],
-		partner2Pet: 'true',
+		partner2Pets: 'true',
 		partner2PetType: "cat",
 		partner2PetBreed: "Tomcat",
 		partner2PetName: "Suddy",
@@ -366,7 +363,7 @@
 		childLikes: [],
 		childParent1: "Rich Little",
 		childParent2: null,
-		childPet: 'true',
+		childPets: 'true',
 		childPetType: "fish",
 		childPetBreed: "Guppy",
 		childPetName: "Swimmy"
@@ -384,7 +381,7 @@
 		childLikes: ["Walt Disney World", "Transformers"],
 		childParent1: "Rich Little",
 		childParent2: "Kat Killie",
-		childPet: 'false',
+		childPets: 'false',
 		childPetType: null,
 		childPetBreed: null,
 		childPetName: null
@@ -470,12 +467,12 @@
 		partner2MilitaryDetails: "   ",
 		partner2AllowCoriCheck: 'true',
 		partner2Activities: [],
-		partner1Pet: 'false',
-		partner1PetType: null,
-		partner1PetBreed: null,
-		partner1PetName: null,
-		partner1Married: 'false',
-		partner1CivilUnion: 'true'
+		partner2Pets: 'false',
+		partner2PetType: null,
+		partner2PetBreed: null,
+		partner2PetName: null,
+		partner2Married: 'false',
+		partner2CivilUnion: 'true'
 		};
 
 	
@@ -533,40 +530,20 @@ $(document).on('ready', function() {
    			var haschildren = $('input[name=children]:checked').val();
    			var haspets = $('input[name=pets]:checked').val();
    			var militaryservice = $('input[name=militaryservice]:checked').val();
-   			// console.log("got clickec");
    			
+   			
+   			
+
    			couple2.search(minage, maxage, haschildren, haspets, militaryservice);
    		
    			couple3.search(minage, maxage, haschildren, haspets, militaryservice);
 			
-   			// var search = $(".search");
-   			// var items  = $("#childrenyes");
-   			// console.log("search and items", search, items)
-
-   			// console.log("clicked on the submit button");
-   			// couple1.search();
 
    			 
 
    		});
  
-   		//couple2.search(minage, maxage, haschildren, haspets, militaryservice);
-		//	return false;
-		//	couple3.search(minage, maxage, haschildren, haspets, militaryservice);
-
-        //var v = search.val().toLowerCase();
-       //if(v == "") { 
-        //   items.show();
-        //   return;
-       		//}
-       // $.each(items, function(){
-        //    var it = $(this);
-        //    var lb = it.find("label").text().toLowerCase();
-        //    if(lb.indexOf(v) == -1) 
-         //        it.hide();
-        //});
-    //});        
-
+   		
  //  End Search on items
 
   
